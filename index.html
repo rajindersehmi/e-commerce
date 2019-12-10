@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Aione Framework</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.aioneframework.com/assets/css/aione.min.css">
+    <style>
+        .top-row {
+            border-bottom: 1px solid rgba(238, 238, 238, 1);
+        }
+        
+        span.nav-item-text {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-left: 25px;
+        }
+        
+        span.nav-item-text:hover {
+            color: rgba(33, 200, 168, 1);
+        }
+        
+        select.width-17.font-size-12 {
+            background-color: #ffffff;
+            border: 0;
+        }
+        
+        select.width-17.font-size-12:hover {
+            color: rgba(6, 30, 187, 1);
+        }
+        
+        .aione-header .aione-logo img {
+            max-height: 50px;
+            margin-left: 60px;
+        }
+        
+        .header .aione-icon {
+            float: left;
+            margin-right: 15px;
+        }
+        
+        .header .description p {
+            font-size: 18px;
+            font-weight: 700;
+            color: rgba(35, 56, 81, 1);
+        }
+        
+        .header .description span {
+            font-size: 13px;
+            font-weight: 400;
+            color: rgba(35, 56, 81, 1);
+        }
+        
+        .header .header-top:hover p {
+            color: rgba(33, 200, 168, 1);
+        }
+        
+        .header-banner {
+            background-color: #233851;
+            font-weight: 700;
+        }
+        
+        .header-banner .first-wrapper {
+            background-color: #f8e15b;
+            color: black;
+            padding: 3px;
+            border-radius: 5px;
+        }
+        
+        .first-wrapper:hover,
+        .last-wrapper:hover {
+            background-color: #e1eefa;
+        }
+        
+        .header-banner .first-wrapper .fa {
+            float: left;
+            margin-right: 24px;
+            line-height: 2;
+            margin-left: 8px;
+        }
+        
+        .header-banner .first-wrapper span.label {
+            position: relative;
+            top: -32px;
+            left: 173px;
+            background-color: #e8284d;
+            font-size: 11px;
+            color: white;
+            font-weight: 400;
+            padding: 1px;
+            padding-right: 4px;
+            border-radius: 2px;
+            padding-left: 4px;
+        }
+        
+        .header-banner .l45 {
+            background-color: #e1eefa;
+            border-radius: 5px;
+        }
+        
+        .middle-wrapper .dropdown {
+            float: left;
+            margin-right: -4px;
+            margin-left: -5px;
+            line-height: 2;
+            color: black;
+            padding: 6px;
+            padding-right: 10px;
+        }
+        
+        .header-banner .middle-wrapper input {
+            border: 0;
+            background: none;
+            width: 82%;
+            height: 38px;
+            margin-left: 15px;
+        }
+        
+        .next-wrapper {
+            color: rgba(221, 221, 221, 1);
+        }
+        
+        .next-wrapper .dropdown,
+        .d-item {
+            float: left;
+        }
+        
+        .next-wrapper .count-zero {
+            position: relative;
+            top: -50px;
+            left: 10px;
+            background-color: #e82865;
+            border-radius: 10px;
+            font-size: 11px;
+            color: white;
+            margin: 0;
+            padding: 0 3px;
+            text-align: center;
+        }
+        
+        .last-wrapper {
+            background-color: #f8e15a;
+            padding: 7px;
+            border-radius: 5px;
+            color: black;
+        }
+        
+        .last-wrapper .count-zero {
+            position: absolute;
+            background-color: #e82865;
+            border-radius: 10px;
+            font-size: 11px;
+            color: white;
+            margin: 0;
+            margin-top: -12px;
+            padding: 2px;
+            text-align: center;
+            margin-left: 15px;
+        }
+        
+        .bg-grey-section {
+            background-color: #eeeeef;
+        }
+        
+        .bg-grey-section .slider-wrapper .content {
+            position: absolute;
+            top: 45%;
+            left: 15%;
+        }
+        
+        .bg-grey-section .slider-wrapper .content h5 {
+            font-size: 48px;
+            background-color: white;
+            padding: 12px;
+            color: black;
+        }
+        
+        .bg-grey-section .slider-wrapper .content a.aione-button {
+            background: #221ebb;
+            margin: 25px;
+            padding-right: 35px;
+        }
+        
+        .bg-grey-section .slider-wrapper .content a.aione-button::after {
+            position: absolute;
+            content: "\f119";
+            font-size: 25px;
+            margin-left: 8px;
+            display: inline-block;
+            font-family: Ionicons;
+            font-weight: 400;
+        }
+        
+        .bg-grey-section .slider-wrapper .slider.aione .owl-dots {
+            display: none;
+        }
+        
+        .bg-grey-section .slider-wrapper .owl-carousel .owl-dots.disabled,
+        .owl-carousel .owl-nav.disabled {
+            display: inline;
+        }
+        
+        .slider.aione .owl-nav .owl-prev {
+            left: 87%;
+            top: 62%;
+        }
+        
+        .slider .owl-nav .owl-prev:before {
+            left: 36px;
+        }
+        
+        .slider .owl-nav .owl-next:before,
+        .slider .owl-nav .owl-prev:before {
+            width: 25px;
+            height: 25px;
+        }
+        
+        .slider .owl-nav .owl-next:before {
+            left: 22px;
+        }
+        
+        .slider.aione .owl-nav .owl-prev:hover {
+            background: rgba(41, 199, 215, 0.98);
+        }
+        
+        .slider.aione .owl-nav .owl-next:hover {
+            background: rgba(41, 199, 215, 0.98);
+        }
+        
+        .overlay-wrapper {
+            position: relative;
+        }
+        
+        .overlay-wrapper .overlay {
+            position: absolute;
+            top: 0px;
+            bottom: 0;
+            opacity: 0;
+            overflow: hidden;
+            background: rgba(6, 30, 187, 0.2);
+            height: 100%;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .overlay-wrapper:hover .overlay {
+            opacity: 1;
+        }
+        
+        .overlay h5 {
+            background: rgba(41, 199, 215, 0.98);
+            margin-top: 209px;
+            font-size: 17px;
+            position: relative;
+            color: white;
+            padding: 12px;
+        }
+        
+        .wrapper-class .fa {
+            background-color: #8ccfea;
+            color: black;
+            padding: 18px;
+            font-size: 22px;
+            margin-top: 16px;
+            border-radius: 50%;
+        }
+        
+        .wrapper-class h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: black;
+        }
+        
+        .wrapper-class p {
+            font-size: 13px;
+        }
+        
+        .bg-grey-section .ac.l25.m50.s100:hover {
+            background-color: #ffffff;
+        }
+        
+        .gallery-tabs-section .image {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-tabs-section .image img {
+            display: block;
+            position: relative;
+            transition: all 0.2s linear;
+            overflow: hidden;
+        }
+        
+        .gallery-tabs-section .image:hover img {
+            transform: scale(1.1, 1.1);
+        }
+        
+        .gallery-tabs-section a.aione-button.medium.square {
+            background-color: #221ebb;
+            font-size: 15px;
+            font-weight: 400;
+            position: absolute;
+            margin-left: 30px;
+            margin-top: -15px;
+            margin-bottom: 10px;
+            padding: 5px;
+            padding-right: 15px;
+            padding-left: 15px;
+            z-index: 2;
+        }
+    </style>
+</head>
+<!-- End of Head Section -->
+
+<body>
+    <div id="aione_wrapper" class="aione-wrapper page-home layout-header-top aione-layout-wide aione-theme-arcane">
+        <div class="wrapper">
+            <div class="ar top-row">
+                <div class="ac l50 s100 m100">
+                    <nav id="aione_nav" class="aione-nav  horizontal">
+                        <ul id="aione_menu" class="aione-menu">
+                            <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Home">Home</span></a></li>
+                            <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="About Us">About Us</span></a></li>
+                            <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Faq">Faq</span></a></li>
+                            <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Custom">Custom</span></a></li>
+                            <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Menus">Menus</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="ac l50 s100 m100 aione-align-right pr-30">
+                    <select name="money" class="width-17 font-size-12">
+                        <option value="$ us dollar">$ US DOLLAR</option>
+                        <option value="£ pond">£ POND</option>
+                        <option value="€ euro">€ EURO</option>
+                    </select>
+                </div>
+            </div>
+            <div id="aione_header" class="aione-header light">
+                <div class="wrapper header">
+                    <div class="ar mt-16">
+                        <div class="ac l40 m40 s100">
+                            <div class="aione-logo">
+                                <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/logo/5-1x-200x56.png">
+                            </div>
+                        </div>
+                        <div class="ac l15 m15 s15 header-top">
+                            <div class="aione-icon">
+                                <i class="fa fa-volume-control-phone fa-2x" aria-hidden="true" style="color: rgba(6,30,187,1);"></i>
+                            </div>
+                            <div class="description">
+                                <p>180036003232</p>
+                                <span>Call us anytime</span>
+                            </div>
+                        </div>
+                        <div class="ac l15 m15 s15 header-top">
+                            <div class="aione-icon">
+                                <i class="fa fa-truck fa-2x" aria-hidden="true" style="color: rgba(78,177,66,1);"></i>
+                            </div>
+                            <div class="description">
+                                <p>Free Shipping</p>
+                                <span>Delivery information</span>
+                            </div>
+                        </div>
+                        <div class="ac l15 m15 s15 header-top">
+                            <div class="aione-icon">
+                                <i class="fa fa-envelope-o fa-2x" aria-hidden="true" style="color: rgba(248,86,57,1);"></i>
+                            </div>
+                            <div class="description">
+                                <p>Contact</p>
+                                <span>Leave us a message</span>
+                            </div>
+                        </div>
+                        <div class="ac l15 m15 s15 header-top">
+                            <div class="aione-icon">
+                                <i class="fa fa-file-text-o fa-2x" aria-hidden="true" style="color: rgba(33,200,168,1);"></i>
+                            </div>
+                            <div class="description">
+                                <p>Blog</p>
+                                <span>Latest news</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-banner sticky mt-10">
+                        <div class="aione-wrapper pt-16">
+                            <div class="ar">
+                                <div class="ac l20 m20 s100">
+                                    <div class="first-wrapper">
+                                        <i class="fa fa-bars" aria-hidden="true"></i>
+                                        <p class="dropdown mt-7">Shop by Category</p>
+                                        <span class="label">Sale</span></div>
+                                </div>
+                                <div class="ac l45 m45 s100">
+                                    <div class="middle-wrapper">
+                                        <p class="dropdown">All<i class="fa fa-arrow-down fa-1x ml-5" aria-hidden="true"></i></p>
+                                        <input type="text" name="search" placeholder="Search here..." class="search-input">
+                                        <i class="fa fa-search fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="ac l20 m20 s100">
+                                    <div class="next-wrapper aione-align-center ml-25">
+                                        <ul>
+                                            <li class="dropdown mr-18"><span><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                                                <p>Account</p>
+                                            </li>
+                                            <li class="d-item"><span><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></span>
+                                                <p>Wishlist</p>
+                                                <span class="count-zero">0</span>
+                                            </li>
+                                            <li class="d-item1"><span><i class="fa fa-compass fa-2x" aria-hidden="true"></i></span>
+                                                <p>Compare</p>
+                                                <span class="count-zero">0</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="ac l15 m15 s100">
+                                    <div class="last-wrapper">
+                                        <p class="ml-5">0 item(s) - $0.00<span><i class="fa fa-shopping-cart fa-2x ml-7" aria-hidden="true"></i></span>
+                                            <span class="count-zero">0</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--  Start aione-header Section-->
+            <div id="aione_main" class="aione-main fullwidth">
+                <div class="wrapper">
+                    <div id="aione_content" class="aione-content">
+                        <div class="wrapper">
+                            <div id="aione_page_content" class="aione-page-content">
+                                <div class="wrapper">
+                                    <div class="ar">
+                                        <div class="ac l100 m100 s100">
+                                            <nav id="aione_nav" class="aione-nav  horizontal">
+                                                <ul id="aione_menu" class="aione-menu">
+                                                    <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text active" data-hover="Quick Links">Quick Links</span></a></li>
+                                                    <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Fashion">Fashion</span></a></li>
+                                                    <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Electronics">Electronics</span></a></li>
+                                                    <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Bags">Bags</span></a></li>
+                                                    <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Health & Beauty">Health & Beauty</span></a></li>
+                                                    <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Footwear">Footwear</span></a></li>
+                                                    <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Food">Food</span></a></li>
+                                                    <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Baby & Kids">Baby & Kids</span></a></li>
+                                                    <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Home">Home</span></a></li>
+                                                    <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Flowers">Flowers</span></a></li>
+                                                    <li class="aione-nav-item level0"><a href="#"><span class="nav-item-text" data-hover="Appliances">Appliances</span></a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                    <section class="bg-grey-section p-40">
+                                        <div class="ar">
+                                            <div class="ac l60 m60 s60 p-0">
+                                                <div class="slider-wrapper">
+                                                    <div class="slider owl-carousel aione" data-nav-text="" data-items="1" data-margin="10" data-loop="true" data-autoplay="true">
+                                                        <div class="slider-item">
+                                                            <img class="" src="https://www.journal-theme.com/3/image/cache/catalog/journal3/slider/demo3/demo11-768x500h.jpg" alt="" />
+                                                            <div class="content">
+                                                                <h5 align="center">#bestsound</h5>
+                                                                <a href="#" class="aione-button medium square "> Learn More</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slider-item">
+                                                            <img class="" src="https://www.journal-theme.com/3/image/cache/catalog/journal3/slider/demo3/back2-768x500h.jpg" alt="" />
+                                                            <div class="content">
+                                                                <h5 align="center">#seasonessentials</h5>
+                                                                <a href="#" class="aione-button medium square "> Shop Now</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slider-item">
+                                                            <video autoplay="" class="H_j_h l_e_g" data-automation="VideoPlayer_video_video" loop="" muted="" playsinline="" style="transform: rotate(-0deg);height: 500px;" src="https://www.journal-theme.com/3/image/catalog/journal3/videos/memory.mp4">
+
+                                                            </video>
+                                                            <div class="content">
+                                                                <h5 align="center">#journal3ishere</h5>
+                                                                <a href="#" class="aione-button medium square "> Shop Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ac l40 m40 s40 p-0">
+                                                <div class="ar">
+                                                    <div class="ac l50 m50 s50 p-0">
+                                                        <div class="overlay-wrapper">
+                                                            <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/banners/23-256x250w.jpg">
+                                                            <div class="overlay">
+                                                                <h5>Sample banner caption</h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ac l50 m50 s50 p-0">
+                                                        <div class="overlay-wrapper">
+                                                            <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/banners/28-256x250w.jpg">
+                                                            <div class="overlay">
+                                                                <h5>Sample banner caption</h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ac l100 m100 s100 p-0">
+                                                        <div class="overlay-wrapper">
+                                                            <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/banners/12-2b-512x250h.jpg">
+                                                            <div class="overlay">
+                                                                <h5>Sample banner caption</h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ar pt-35">
+                                            <div class="ac l25 m50 s100 pb-8">
+                                                <div class="wrapper-class">
+                                                    <div class="ac l25 m25 s25">
+                                                        <i class="fa fa-diamond fa-2x" aria-hidden="true"></i>
+                                                    </div>
+                                                    <div class="ac l75 m75 s75">
+                                                        <h4>Unlimited Blocks</h4>
+                                                        <p>Create and open custom popups from any link or block</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ac l25 m50 s100 pb-8">
+                                                <div class="wrapper-class">
+                                                    <div class="ac l25 m25 s25">
+                                                        <i class="fa fa-building fa-2x" aria-hidden="true"></i>
+                                                    </div>
+                                                    <div class="ac l75 m75 s75">
+                                                        <h4>Unlimited Blocks</h4>
+                                                        <p>Create and open custom popups from any link or block</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ac l25 m50 s100 pb-8">
+                                                <div class="wrapper-class">
+                                                    <div class="ac l25 m25 s25">
+                                                        <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                                                    </div>
+                                                    <div class="ac l75 m75 s75">
+                                                        <h4>Unlimited Blocks</h4>
+                                                        <p>Create and open custom popups from any link or block</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ac l25 m50 s100 pb-8">
+                                                <div class="wrapper-class">
+                                                    <div class="ac l25 m25 s25">
+                                                        <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
+                                                    </div>
+                                                    <div class="ac l75 m75 s75">
+                                                        <h4>Unlimited Blocks</h4>
+                                                        <p>Create and open custom popups from any link or block</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section class="gallery-tabs-section mt-45 mb-45">
+                                        <div class="wrapper">
+                                            <div class="aione-tabs horizontal align-left layout-left theme-pastel">
+                                                <div class="nav ml-65">
+                                                    <div data-target="#tab_sollicitudin" class="active">TOP CATEGORIES </div>
+                                                    <div data-target="#tab_gravida" class="">FASHION </div>
+                                                    <div data-target="#tab_sagittarius" class="">BEAUTY </div>
+                                                    <div data-target="#tab_sulcation" class="">BAGS </div>
+                                                </div>
+                                                <div class="content pl-55">
+                                                    <div id="tab_sollicitudin" class="active">
+                                                        <div class="ar ">
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/categories/demo09-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Fashion</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/categories/bagcat-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Bags</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/categories/beauty-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Health & beauty</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/categories/f6-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Footwear</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/categories/acceso-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Home</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/categories/elec-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Electronics</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tab_gravida">
+                                                        <div class="ar">
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/sunglasses/glasses3-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Accessories</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/misc/assorted-blurred-background-boutique-994523-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Dresses</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/fashion/c-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Pants</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/fashion/t2-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> T-Shirts</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/fashion/sweater-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Top</a>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div id="tab_sagittarius">
+                                                        <div class="ar">
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/beauty/set6-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Accessories</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/beauty/14-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Body</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/beauty/25-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> lipstick</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/beauty/additional/brush-case-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Makeup</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/beauty/28-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Maskara</a>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div id="tab_sulcation">
+                                                        <div class="ar">
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/backpacks/3-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Backpacks</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/fashion/bags/purse-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Clutches</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/fashion/bags/bag-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Formal</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/fashion/bags/straw-bag-200x250h.jpg">
+                                                                    <a href="#" class="aione-button medium square "> Parses</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ac l16 s20 m20">
+                                                                <div class="image">
+                                                                    <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/products/fashion/bags/tote2-200x250h.jpg">
+                                                                </div>
+                                                                <div class="gallery-button">
+                                                                    <a href="#" class="aione-button medium square "> Shoulder</a>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section class="collection-section">
+                                        <div class="wrapper">
+                                            <div class="ar">
+                                                <div class="ac l40 m40 s40">
+                                                    <div class="image">
+                                                        <img src="https://www.journal-theme.com/3/image/cache/catalog/journal3/people/andrew-neel-369701-unsplash-1500x1000.jpg" alt="">
+                                                    </div>
+                                                    <div class="content">
+                                                        <h4 class="aione-align-center">CUSTOM BLOCKS</h4>
+                                                        <h3 class="aione-align-center">#pagebuilder</h3>
+                                                        <p class="aione-align-center">Create any imaginable grid layout combinations with rows columns and modules via the all new and powerful Journal Page Builder.</p>
+                                                        <a href="#" class="aione-button medium square "> SEE ALL PRODUCTS</a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- .aione-page-content -->
+                                </div>
+                            </div>
+                            <!-- .aione-content -->
+                        </div>
+                    </div>
+                    <!-- .aione-main -->
+                    <div id="aione_footer" class="aione-footer">
+                        <div class="wrapper">
+                        </div>
+                    </div>
+                    <!-- .aione-footer -->
+                    <div id="aione_copyright" class="aione-copyright">
+                        <div class="wrapper">
+                        </div>
+                    </div>
+                    <!-- .aione-copyright -->
+                </div>
+            </div>
+            <script type="text/javascript" src="https://cdn.aioneframework.com/assets/js/vendor.min.js">
+            </script>
+            <script type="text/javascript" src="https://cdn.aioneframework.com/assets/js/aione.min.js">
+            </script>
+</body>
+
+</html>
